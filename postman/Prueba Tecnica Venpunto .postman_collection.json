@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "d3c2493e-9d91-4262-bb30-30d6656b8440",
+		"name": "Prueba Tecnica Venpunto ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "/api/auth/signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Ricardo\", \r\n    \"lastname\":\"Bastardo\", \r\n    \"username\":\"bastvai\", \r\n    \"email\":\"bastvai@gmail.com\", \r\n    \"password\":\"1234\", \r\n    \"phone\":\"1234567\", \r\n    \"address\":\"caricuao\", \r\n    \"birthday\":\"11/09/1987\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/auth/signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"bastvai@gmail.com\",\r\n    \"password\": \"1234\"    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/signin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "/companies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/companies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/companies",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTE5NGMyNDMxM2M2MzkwYzJiODUyNCIsImlhdCI6MTYwNDQyNTQ2NCwiZXhwIjoxNjA0NTExODY0fQ.jmtYcVfa4vhaHGbrTjgVT5BVvHrcuXBdF2H1kTMcmlA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{     \r\n    \"name\": \"Nestle2\", \r\n    \"rif\": \"12345\", \r\n    \"email\": \"nestle3@nestle.com\", \r\n    \"phone\": \"123456\", \r\n    \"address\": \"La Urbina\", \r\n    \"razon_social\": \"Nestle S.A.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/companies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/companies/:companyId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/companies/5fa18a3607451837447f5729",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"companies",
+								"5fa18a3607451837447f5729"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/companies/:companyId",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTE5NGMyNDMxM2M2MzkwYzJiODUyNCIsImlhdCI6MTYwNDQyNTQ2NCwiZXhwIjoxNjA0NTExODY0fQ.jmtYcVfa4vhaHGbrTjgVT5BVvHrcuXBdF2H1kTMcmlA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\":\"987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/companies/5fa18a3607451837447f5729",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"companies",
+								"5fa18a3607451837447f5729"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/companies/:companyId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYTE5NGMyNDMxM2M2MzkwYzJiODUyNCIsImlhdCI6MTYwNDQyNTQ2NCwiZXhwIjoxNjA0NTExODY0fQ.jmtYcVfa4vhaHGbrTjgVT5BVvHrcuXBdF2H1kTMcmlA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/companies/5fa1942f4313c6390c2b8523",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"companies",
+								"5fa1942f4313c6390c2b8523"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
